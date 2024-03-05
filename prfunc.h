@@ -1,3 +1,5 @@
+//Arquivo .h (header) para modularização
+
 #ifndef PRFUNC_H
 #define PRFUNC_H
 
