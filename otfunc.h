@@ -1,3 +1,5 @@
+//Criação de um arquivo .h (header) para modularização
+
 #ifndef OTFUNC_H
 #define OTFUNC_H
 
