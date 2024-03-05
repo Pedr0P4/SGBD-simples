@@ -5,6 +5,8 @@
 #include "otfunc.h"
 #include "prfunc.h"
 
+//MAIN DO PROGRAMA
+
 int main(){
 
   //Variável do comando. ans = answer.
