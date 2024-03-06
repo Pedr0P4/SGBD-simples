@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <windows.h>
 #include "otfunc.h"
 #include "prfunc.h"
 
@@ -10,7 +11,7 @@
 //Struct da coluna.
 typedef struct {
   char *nome;
-  char tipo[10];
+  char tipo[32];
 } col;
 
 //Struct da tabela.
@@ -103,7 +104,7 @@ void CriarTabela(){
   //Variáveis da função.
   FILE *arquivo;
   int qtcoluna, i;
-  int tam = 0;
+  int tam = 0, teste = 0;
   char *nome_tabela = NULL;
   char c;
 
@@ -172,8 +173,22 @@ void CriarTabela(){
     tabela.coluna[i].nome = (char *)realloc(tabela.coluna[i].nome, sizeof(char)*(tam+1));
     tabela.coluna[i].nome[tam] = '\0';
 
-    printf("Digite o tipo de dados da coluna %d: ", i+1);
-    scanf(" %9s", tabela.coluna[i].tipo);
+    teste = 0;
+    //Teste para saber se o usuário está digitando um tipo válido.
+    while(teste == 0){
+      printf("Digite o tipo de dados da coluna %d: ", i+1);
+      scanf("%32s", tabela.coluna[i].tipo);
+      if(strcmp(tabela.coluna[i].tipo, "string") == 0 ||
+         strcmp(tabela.coluna[i].tipo, "float") == 0 ||
+         strcmp(tabela.coluna[i].tipo, "double") == 0 ||
+         strcmp(tabela.coluna[i].tipo, "char") == 0 ||
+         strcmp(tabela.coluna[i].tipo, "int") == 0){
+        teste = 1;
+      } else{
+        printf("\nO tipo  '%s' não existe ou não foi configurado para funcionar no programa, por favor, insira um tipo válido. (Tipos válidos: string, char, int, float e double)\n\n", tabela.coluna[i].tipo);
+        teste = 0;
+      }
+    }
   }
 
   //Pergunta o nome da Primary Key.
@@ -231,7 +246,9 @@ void CriarTabela(){
 void ListarTabelas(){
   //Variáveis da função.
   //Variável DIR que leva ao diretório do executável compilado do código.
-  DIR *dir = opendir("C:\\Users\\user\\Documents\\SGBD ITP\\Projeto de ITP");
+  char path[MAX_PATH];
+  GetCurrentDirectory(MAX_PATH, path);
+  DIR *dir = opendir(path);
   int tamline = 0;
   int i;
   char *dest = NULL;
