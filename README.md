@@ -16,6 +16,8 @@
   basta criar uma linha com as informações de cada coluna, criando assim, um registro.
 </p>
 <br>
+
+<!-- Imagem "escondida" para exemplo visual -->
 <details>
   <summary>❓Exemplo visual</summary>
   <img src="https://lh4.googleusercontent.com/--p0O33vpEHk/TW6Prv4vFZI/AAAAAAAAAAc/kL7GeA4oXno/s1600/estrutura+tabela+sgbd.png">
@@ -25,8 +27,11 @@
   Segue abaixo uma imagem de exemplo de uma tabela criada pelo meu programa:
 </p>
 <br>
+
+<!-- Imagem da tabela feita pelo meu programa (pode mudar futuramente) -->
 <img src="https://media.discordapp.net/attachments/1214968443875365028/1214968464247226398/image.png?ex=65fb0a8e&is=65e8958e&hm=754543f29af72905d8fc7c2c7da5d79a04c1e3bead3ca4ae1f3c39830f892daa&=&format=webp&quality=lossless">
 <br>
 
+<!-- Warning box -->
 >[!WARNING]
 >Projeto inacabado. Há muitos bugs que serão corrigidos.
