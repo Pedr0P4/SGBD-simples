@@ -161,7 +161,7 @@ void CriarTabela(){
   //Loop que repete qtcoluna vezes (a quantidade de colunas) para coletar e armazenar os dados da coluna na struct coluna dentro da struct tabela.
   for(i=0;i<qtcoluna;i++){
     tam = 0;
-    tabela.coluna[i].nome = (char *)malloc(sizeof(char)*tam+1);
+    tabela.coluna[i].nome = (char *)malloc(sizeof(char)*(tam+1));
     printf("Digite o nome da coluna %d: ", i+1);
 
     LimparEntrada();
@@ -301,6 +301,9 @@ void ListarTabelas(){
           dest[tdest] = '\0';
           printf("%s\n", dest);
         }
+      } else{
+        printf("Não foi possível abrir o arquivo.");
+        return;
       }
       //Fecha o arquivo.
       fclose(arquivo);
