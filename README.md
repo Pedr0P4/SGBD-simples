@@ -15,7 +15,7 @@
 
 <br>
 
-p>
+<p>
   Tendo a Chave Primária definida (no meu programa é possível dar um nome à sua chave primária, por exemplo, "ID", "Chave", "Matrícula", etc.) e também os nomes das colunas (dependendo de quantas colunas tenham sido criadas),
   basta criar uma linha com as informações de cada coluna, criando assim, um registro.
 </p>
@@ -55,7 +55,3 @@ p>
 
 <br>
 <br>
-
-<!-- Warning box -->
->[!WARNING]
->Projeto inacabado. Há muitos bugs que serão corrigidos.
